@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowchi Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            color: white;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            padding: 20px;
+        }
+        h1, h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .event-details, .registration, .contact {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: none;
+        }
+        input {
+            background: white;
+            color: black;
+        }
+        button {
+            background: #ff007f;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff0055;
+        }
+        #confirmationMessage {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #00ff00;
+        }
+        footer {
+            background: #ff007f;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Bowchi - A Touch of Elegance</h1>
+        <h2>Exclusive Bag Charm Launch Event</h2>
+        <p>Join us for an exclusive showcase of our luxury bag charms at an affordable price.</p>
+    </header>
+
+    <!-- Event Details -->
+    <section class="event-details">
+        <h2>Event Details</h2>
+        <p><strong>📅 Date:</strong> March 25, 2025</p>
+        <p><strong>📍 Venue:</strong> 3/2 A Pilliyar Koil Street, Perungudi</p>
+        <p><strong>⏰ Time:</strong> 5:00 PM - 8:00 PM</p>
+        <p>Experience the elegance of our latest collection & enjoy special discounts!</p>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="registration">
+        <h2>Register Now</h2>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <button type="submit">Register</button>
+        </form>
+        <p id="confirmationMessage"></p>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p><strong>📞 Phone:</strong> <a href="tel:+919514321590">+91 95143 21590</a></p>
+        <p><strong>🌐 Website:</strong> <a href="https://www.bowchi.com" target="_blank">www.bowchi.com</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Bowchi. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            if (name && email && phone) {
+                document.getElementById("confirmationMessage").innerText = 
+                    `Thank you, ${name}! Your registration is confirmed.`;
+                
+                // Clear form fields
+                document.getElementById("registrationForm").reset();
+            }
+        });
+    </script>
+
+</body>
+</html>
